@@ -8,6 +8,10 @@ if sys.argv[-1] == 'setup.py':
     print('To install, run \'python setup.py install\'')
     print()
 
+if sys.version[0] < '3':
+    print("Please install with Python 3. Aborting installation.")
+    sys.exit(0)
+
 sys.path.insert(0, 'potterscript')
 import release
 
