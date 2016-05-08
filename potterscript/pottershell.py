@@ -5,6 +5,8 @@ import platform
 import readline
 import sys
 
+from potterscript import release
+
 histfile = os.path.join(os.path.expanduser("~"), ".python_history")
 
 try:
@@ -19,7 +21,7 @@ uname = platform.uname()
 def main():
     print("Python {} {}".format(platform.python_version(), platform.python_build()))
     print()
-    print("PotterScript 0.0.1 (default, July 31 2016, 00:09:34)")
+    print("PotterScript {} ({})".format(release.__version__, release.__date__))
     print("[{}] on {} {}".format(platform.python_compiler(), uname.system, uname.release))
     print("Type \"help\", \"copyright\", \"credits\" or \"license\" for more information.")
     print()
