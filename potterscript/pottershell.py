@@ -41,6 +41,14 @@ def main():
         try:
             query = input("In [" + colors.INPUT + str(Q_NO) + colors.ENDC + "]: ")
             if query != '':
+                if query[-1] == ":":
+                    # Take subsequent queries
+                    while(True):
+                        query_ = input("   ...: ")
+                        if query_ != "":
+                            query += "\n" + query_
+                        else:
+                            break
                 # Process
                 try:
                     out = eval(query)
